@@ -22,18 +22,18 @@ Left 4 Dead Hooks 是一个用于 Left 4 Dead 和 Left 4 Dead 2 的 SourceMod �
 | `L4D_OnFirstSurvivorLeftSafeArea()` | client - 第一个离开安全区域的幸存者索引 | Action | 第一个幸存者离开安全区域时调用，可阻止回合开始 |
 | `L4D_OnFirstSurvivorLeftSafeArea_Post()` | client - 第一个离开安全区域的幸存者索引 | 无 | 第一个幸存者离开安全区域后的回调 |
 | `L4D_OnIncapacitatedSurvivorKilled()` | victim - 受害者索引<br>attacker - 攻击者索引<br>inflictor - 伤害来源索引 | 无 | 被击倒的幸存者死亡时调用 |
-| `L4D_OnChargerCollide()` | charger - Charger僵尸索引<br>victim - 受害者索引 | Action | Charger碰撞到幸存者时调用 |
-| `L4D_OnChargerGrab()` | charger - Charger僵尸索引<br>victim - 受害者索引 | Action | Charger抓住幸存者时调用 |
-| `L4D_OnChargerReleased()` | charger - Charger僵尸索引<br>victim - 受害者索引 | 无 | Charger释放幸存者时调用 |
-| `L4D_OnChargerPummel()` | charger - Charger僵尸索引<br>victim - 受害者索引 | Action | Charger殴打幸存者时调用 |
-| `L4D_OnJockeyMount()` | jockey - Jockey僵尸索引<br>victim - 受害者索引 | Action | Jockey骑到幸存者身上时调用 |
-| `L4D_OnJockeyDismount()` | jockey - Jockey僵尸索引<br>victim - 受害者索引 | 无 | Jockey从幸存者身上下来时调用 |
-| `L4D_OnSpitterSpit()` | spitter - Spitter僵尸索引 | Action | Spitter吐口水时调用 |
+| `L4D_OnChargerCollide()` | charger - Charger索引<br>victim - 受害者索引 | Action | Charger碰撞到幸存者时调用 |
+| `L4D_OnChargerGrab()` | charger - Charger索引<br>victim - 受害者索引 | Action | Charger抓住幸存者时调用 |
+| `L4D_OnChargerReleased()` | charger - Charger索引<br>victim - 受害者索引 | 无 | Charger释放幸存者时调用 |
+| `L4D_OnChargerPummel()` | charger - Charger索引<br>victim - 受害者索引 | Action | Charger殴打幸存者时调用 |
+| `L4D_OnJockeyMount()` | jockey - Jockey索引<br>victim - 受害者索引 | Action | Jockey骑到幸存者身上时调用 |
+| `L4D_OnJockeyDismount()` | jockey - Jockey索引<br>victim - 受害者索引 | 无 | Jockey从幸存者身上下来时调用 |
+| `L4D_OnSpitterSpit()` | spitter - Spitter索引 | Action | Spitter吐口水时调用 |
 | `L4D_OnSurvivorDeathStart()` | victim - 受害者索引<br>attacker - 攻击者索引<br>inflictor - 伤害来源索引 | Action | 幸存者开始死亡过程时调用 |
 | `L4D_OnSurvivorDeathFinish()` | victim - 受害者索引<br>attacker - 攻击者索引<br>inflictor - 伤害来源索引 | 无 | 幸存者死亡过程结束时调用 |
 | `L4D_OnSurvivorHurt()` | victim - 受害者索引<br>attacker - 攻击者索引<br>inflictor - 伤害来源索引<br>&Float:damage - 伤害值<br>&int:damagetype - 伤害类型 | Action | 幸存者受伤时调用 |
-| `L4D_OnTankRockThrown()` | tank - Tank僵尸索引<br>&entity - 石头实体索引 | Action | Tank扔石头时调用 |
-| `L4D_OnTankRockHit()` | tank - Tank僵尸索引<br>rock - 石头实体索引<br>hitEnt - 被击中的实体索引<br>&bool:allowDamage - 是否允许伤害 | Action | Tank的石头击中目标时调用 |
+| `L4D_OnTankRockThrown()` | tank - Tank索引<br>&entity - 石头实体索引 | Action | Tank扔石头时调用 |
+| `L4D_OnTankRockHit()` | tank - Tank索引<br>rock - 石头实体索引<br>hitEnt - 被击中的实体索引<br>&bool:allowDamage - 是否允许伤害 | Action | Tank的石头击中目标时调用 |
 | `L4D_OnTryOfferingTankBot()` | survivorCount - 当前幸存者数量<br>botCount - 当前电脑AI数量 | Action | 尝试提供AI Tank时调用，可控制Tank是否使用AI控制 |
 | `L4D_OnTryOfferingTankBot_Post()` | survivorCount - 当前幸存者数量<br>botCount - 当前电脑AI数量<br>result - 结果 | 无 | 尝试提供AI Tank后的回调 |
 | `L4D_OnCThrowActivate()` | client - 客户端索引<br>&weapon - 近战武器索引 | Action | 近战武器激活时调用 |
@@ -55,12 +55,12 @@ Left 4 Dead Hooks 是一个用于 Left 4 Dead 和 Left 4 Dead 2 的 SourceMod �
 | `L4D_OnHasConfigurableDifficulty_Post()` | retVal - 返回值 | 无 | 检查是否允许难度配置后的回调（L4D2专用） |
 | `L4D_OnGetSurvivorSet()` | &retVal - 要覆盖的返回值 | Action | 获取幸存者角色集时调用（L4D2专用） |
 | `L4D_OnTryOfferingTankBot()` | tank_index - Tank客户端索引<br>&enterStasis - Tank是否处于停滞状态 | Action | 尝试提供Tank机器人时调用，用于显示"X获得Tank"窗口和转移Tank控制 |
-| `L4D_OnWitchKilled()` | witch - Witch僵尸索引<br>killer - 杀手索引<br>inflictor - 伤害来源索引 | 无 | Witch被杀死时调用 |
-| `L4D_OnWitchAttack()` | witch - Witch僵尸索引<br>victim - 受害者索引 | Action | Witch攻击时调用 |
-| `L4D_OnWitchFlinch()` | witch - Witch僵尸索引<br>attacker - 攻击者索引<br>inflictor - 伤害来源索引 | Action | Witch被击中退缩时调用 |
-| `L4D_OnWitchIgnite()` | witch - Witch僵尸索引 | 无 | Witch被点燃时调用 |
-| `L4D_OnWitchRespawn()` | witch - Witch僵尸索引 | 无 | Witch重生时调用 |
-| `L4D_OnWitchStunned()` | witch - Witch僵尸索引 | 无 | Witch被击晕时调用 |
+| `L4D_OnWitchKilled()` | witch - Witch索引<br>killer - 杀手索引<br>inflictor - 伤害来源索引 | 无 | Witch被杀死时调用 |
+| `L4D_OnWitchAttack()` | witch - Witch索引<br>victim - 受害者索引 | Action | Witch攻击时调用 |
+| `L4D_OnWitchFlinch()` | witch - Witch索引<br>attacker - 攻击者索引<br>inflictor - 伤害来源索引 | Action | Witch被击中退缩时调用 |
+| `L4D_OnWitchIgnite()` | witch - Witch索引 | 无 | Witch被点燃时调用 |
+| `L4D_OnWitchRespawn()` | witch - Witch索引 | 无 | Witch重生时调用 |
+| `L4D_OnWitchStunned()` | witch - Witch索引 | 无 | Witch被击晕时调用 |
 | `L4D2_OnChangeFinaleStage()` | stage - 终局阶段<br>&newStage - 新的终局阶段 | Action | 终局阶段变更时调用（仅L4D2） |
 | `L4D2_OnEndVersusModeRound()` | &bWin - 是否胜利<br>&bIsSurvivorTeam - 是否为幸存者队伍 | Action | 对抗模式回合结束时调用（仅L4D2） |
 | `L4D_OnLedgeGrabbed()` | client - 客户端索引<br>&ledgetype - 边缘类型 | Action | 玩家抓住边缘时调用 |
@@ -85,39 +85,39 @@ Left 4 Dead Hooks 是一个用于 Left 4 Dead 和 Left 4 Dead 2 的 SourceMod �
 | `L4D_OnIncapacitated_Post()` | client - 客户端索引<br>attacker - 攻击者索引<br>inflictor - 伤害来源索引 | 无 | 玩家被击倒后的回调 |
 | `L4D_OnIncapacitated_PostHandled()` | client - 客户端索引<br>attacker - 攻击者索引<br>inflictor - 伤害来源索引 | 无 | 玩家被击倒被阻止时的回调 |
 | `L4D_OnDeathDroppedWeapons()` | victim - 受害者索引<br>bool:primary - 是否为主武器<br>bool:secondary - 是否为副武器 | 无 | 玩家死亡掉落武器时调用 |
-| `L4D2_OnSpitSpread()` | spitter - Spitter僵尸索引<br>spitEntity - 口水实体索引 | 无 | Spitter口水扩散时调用（仅L4D2） |
+| `L4D2_OnSpitSpread()` | spitter - Spitter索引<br>spitEntity - 口水实体索引 | 无 | Spitter口水扩散时调用（仅L4D2） |
 | `L4D_PlayerExtinguish()` | client - 客户端索引<br>attacker - 攻击者索引 | 无 | 玩家被扑灭时调用 |
 | `L4D2_OnUseHealingItems()` | client - 客户端索引<br>target - 目标索引<br>&weapon - 武器索引 | Action | 玩家使用医疗物品时调用（仅L4D2） |
 | `L4D2_OnFindScavengeItem()` | client - 客户端索引<br>item - 物品实体索引 | 无 | 玩家找到补给物品时调用（仅L4D2） |
-| `L4D2_OnChooseVictim()` | specialInfected - 特殊僵尸索引<br>&victim - 目标幸存者索引 | Action | 特殊僵尸选择受害者时调用（仅L4D2） |
-| `L4D2_OnChooseVictim_Post()` | specialInfected - 特殊僵尸索引<br>victim - 目标幸存者索引 | 无 | 特殊僵尸选择受害者后的回调（仅L4D2） |
-| `L4D2_OnChooseVictim_PostHandled()` | specialInfected - 特殊僵尸索引<br>&victim - 目标幸存者索引 | 无 | 特殊僵尸选择受害者被阻止时的回调（仅L4D2） |
-| `L4D_OnPouncedOnSurvivor()` | pouncer - 扑击者索引<br>victim - 受害者索引 | Action | 特殊僵尸扑到幸存者时调用 |
-| `L4D_OnPouncedOnSurvivor_Post()` | pouncer - 扑击者索引<br>victim - 受害者索引 | 无 | 特殊僵尸扑到幸存者后的回调 |
-| `L4D_OnPouncedOnSurvivor_PostHandled()` | pouncer - 扑击者索引<br>victim - 受害者索引 | 无 | 特殊僵尸扑到幸存者被阻止时的回调 |
-| `L4D_OnGrabWithTongue()` | smoker - Smoker僵尸索引<br>victim - 受害者索引<br>vecDir[3] - 方向向量 | Action | Smoker用舌头抓住幸存者时调用 |
-| `L4D_OnGrabWithTongue_Post()` | smoker - Smoker僵尸索引<br>victim - 受害者索引<br>vecDir[3] - 方向向量 | 无 | Smoker用舌头抓住幸存者后的回调 |
-| `L4D_OnGrabWithTongue_PostHandled()` | smoker - Smoker僵尸索引<br>victim - 受害者索引<br>vecDir[3] - 方向向量 | 无 | Smoker用舌头抓住幸存者被阻止时的回调 |
-| `L4D2_OnStartCarryingVictim()` | charger - Charger僵尸索引<br>victim - 受害者索引 | Action | Charger开始携带受害者时调用（仅L4D2） |
-| `L4D2_OnStartCarryingVictim_Post()` | charger - Charger僵尸索引<br>victim - 受害者索引 | 无 | Charger开始携带受害者后的回调（仅L4D2） |
-| `L4D2_OnStartCarryingVictim_PostHandled()` | charger - Charger僵尸索引<br>victim - 受害者索引 | 无 | Charger开始携带受害者被阻止时的回调（仅L4D2） |
-| `L4D2_OnChargerImpact()` | client - Charger僵尸索引 | 无 | Charger撞击墙壁或物体后调用（仅L4D2） |
-| `L4D2_OnPummelVictim()` | charger - Charger僵尸索引<br>victim - 受害者索引 | Action | Charger开始殴打受害者时调用（仅L4D2） |
-| `L4D2_OnPummelVictim_Post()` | charger - Charger僵尸索引<br>victim - 受害者索引 | 无 | Charger开始殴打受害者后的回调（仅L4D2） |
-| `L4D2_OnPummelVictim_PostHandled()` | charger - Charger僵尸索引<br>victim - 受害者索引 | 无 | Charger开始殴打受害者被阻止时的回调（仅L4D2） |
-| `L4D_OnIsDominatedBySpecialInfected()` | victim - 受害者索引<br>dominator - 控制者索引 | 无 | 玩家被特殊僵尸控制时调用（Hunter、Smoker、Jockey、Charger） |
-| `L4D_OnVomitedUpon()` | victim - 受害者索引<br>attacker - Boomer僵尸索引 | Action | 幸存者被Boomer胆汁喷到时调用 |
-| `L4D_OnVomitedUpon_Post()` | victim - 受害者索引<br>attacker - Boomer僵尸索引 | 无 | 幸存者被Boomer胆汁喷到后的回调 |
-| `L4D_OnVomitedUpon_PostHandled()` | victim - 受害者索引<br>attacker - Boomer僵尸索引 | 无 | 幸存者被Boomer胆汁喷到被阻止时的回调 |
-| `L4D2_OnJockeyRide()` | jockey - Jockey僵尸索引<br>victim - 受害者索引<br>&vecDir[3] - 方向向量 | Action | Jockey控制幸存者移动时调用（仅L4D2） |
-| `L4D2_OnJockeyRide_Post()` | jockey - Jockey僵尸索引<br>victim - 受害者索引<br>vecDir[3] - 方向向量 | 无 | Jockey控制幸存者移动后的回调（仅L4D2） |
-| `L4D2_OnJockeyRide_PostHandled()` | jockey - Jockey僵尸索引<br>victim - 受害者索引<br>&vecDir[3] - 方向向量 | 无 | Jockey控制幸存者移动被阻止时的回调（仅L4D2） |
-| `L4D2_OnSlammedSurvivor()` | charger - Charger僵尸索引<br>victim - 受害者索引<br>vecDir[3] - 方向向量<br>&bool:wall - 是否撞到墙<br>&bool:ground - 是否撞到地面 | Action | Charger将幸存者撞到墙上或地面时调用（仅L4D2） |
-| `L4D2_OnSlammedSurvivor_Post()` | charger - Charger僵尸索引<br>victim - 受害者索引<br>vecDir[3] - 方向向量<br>bool:wall - 是否撞到墙<br>bool:ground - 是否撞到地面 | 无 | Charger将幸存者撞到墙上或地面后的回调（仅L4D2） |
-| `L4D2_OnSlammedSurvivor_PostHandled()` | charger - Charger僵尸索引<br>victim - 受害者索引<br>vecDir[3] - 方向向量<br>&bool:wall - 是否撞到墙<br>&bool:ground - 是否撞到地面 | 无 | Charger将幸存者撞到墙上或地面被阻止时的回调（仅L4D2） |
-| `L4D_OnSpawnSpecial()` | &zombieClass - 僵尸类型<br>vecPos[3] - 生成位置<br>vecAng[3] - 朝向 | Action | 特殊僵尸（Bot）生成前调用 |
-| `L4D_OnSpawnSpecial_Post()` | client - 生成的客户端索引<br>zombieClass - 僵尸类型<br>vecPos[3] - 生成位置<br>vecAng[3] - 朝向 | 无 | 特殊僵尸生成后的回调 |
-| `L4D_OnSpawnSpecial_PostHandled()` | client - 生成的客户端索引<br>zombieClass - 僵尸类型<br>vecPos[3] - 生成位置<br>vecAng[3] - 朝向 | 无 | 特殊僵尸生成被阻止时的回调 |
+| `L4D2_OnChooseVictim()` | specialInfected - 特感索引<br>&victim - 目标幸存者索引 | Action | 特感选择受害者时调用（仅L4D2） |
+| `L4D2_OnChooseVictim_Post()` | specialInfected - 特感索引<br>victim - 目标幸存者索引 | 无 | 特感选择受害者后的回调（仅L4D2） |
+| `L4D2_OnChooseVictim_PostHandled()` | specialInfected - 特感索引<br>&victim - 目标幸存者索引 | 无 | 特感选择受害者被阻止时的回调（仅L4D2） |
+| `L4D_OnPouncedOnSurvivor()` | pouncer - 扑击者索引<br>victim - 受害者索引 | Action | 特感扑到幸存者时调用 |
+| `L4D_OnPouncedOnSurvivor_Post()` | pouncer - 扑击者索引<br>victim - 受害者索引 | 无 | 特感扑到幸存者后的回调 |
+| `L4D_OnPouncedOnSurvivor_PostHandled()` | pouncer - 扑击者索引<br>victim - 受害者索引 | 无 | 特感扑到幸存者被阻止时的回调 |
+| `L4D_OnGrabWithTongue()` | smoker - Smoker索引<br>victim - 受害者索引<br>vecDir[3] - 方向向量 | Action | Smoker用舌头抓住幸存者时调用 |
+| `L4D_OnGrabWithTongue_Post()` | smoker - Smoker索引<br>victim - 受害者索引<br>vecDir[3] - 方向向量 | 无 | Smoker用舌头抓住幸存者后的回调 |
+| `L4D_OnGrabWithTongue_PostHandled()` | smoker - Smoker索引<br>victim - 受害者索引<br>vecDir[3] - 方向向量 | 无 | Smoker用舌头抓住幸存者被阻止时的回调 |
+| `L4D2_OnStartCarryingVictim()` | charger - Charger索引<br>victim - 受害者索引 | Action | Charger开始携带受害者时调用（仅L4D2） |
+| `L4D2_OnStartCarryingVictim_Post()` | charger - Charger索引<br>victim - 受害者索引 | 无 | Charger开始携带受害者后的回调（仅L4D2） |
+| `L4D2_OnStartCarryingVictim_PostHandled()` | charger - Charger索引<br>victim - 受害者索引 | 无 | Charger开始携带受害者被阻止时的回调（仅L4D2） |
+| `L4D2_OnChargerImpact()` | client - Charg索引 | 无 | Charger撞击墙壁或物体后调用（仅L4D2） |
+| `L4D2_OnPummelVictim()` | charger - Charger索引<br>victim - 受害者索引 | Action | Charger开始殴打受害者时调用（仅L4D2） |
+| `L4D2_OnPummelVictim_Post()` | charger - Charger索引<br>victim - 受害者索引 | 无 | Charger开始殴打受害者后的回调（仅L4D2） |
+| `L4D2_OnPummelVictim_PostHandled()` | charger - Charger索引<br>victim - 受害者索引 | 无 | Charger开始殴打受害者被阻止时的回调（仅L4D2） |
+| `L4D_OnIsDominatedBySpecialInfected()` | victim - 受害者索引<br>dominator - 控制者索引 | 无 | 玩家被特感控制时调用（Hunter、Smoker、Jockey、Charger） |
+| `L4D_OnVomitedUpon()` | victim - 受害者索引<br>attacker - Boomer索引 | Action | 幸存者被Boomer胆汁喷到时调用 |
+| `L4D_OnVomitedUpon_Post()` | victim - 受害者索引<br>attacker - Boomer索引 | 无 | 幸存者被Boomer胆汁喷到后的回调 |
+| `L4D_OnVomitedUpon_PostHandled()` | victim - 受害者索引<br>attacker - Boomer索引 | 无 | 幸存者被Boomer胆汁喷到被阻止时的回调 |
+| `L4D2_OnJockeyRide()` | jockey - Jockey索引<br>victim - 受害者索引<br>&vecDir[3] - 方向向量 | Action | Jockey控制幸存者移动时调用（仅L4D2） |
+| `L4D2_OnJockeyRide_Post()` | jockey - Jockey索引<br>victim - 受害者索引<br>vecDir[3] - 方向向量 | 无 | Jockey控制幸存者移动后的回调（仅L4D2） |
+| `L4D2_OnJockeyRide_PostHandled()` | jockey - Jockey索引<br>victim - 受害者索引<br>&vecDir[3] - 方向向量 | 无 | Jockey控制幸存者移动被阻止时的回调（仅L4D2） |
+| `L4D2_OnSlammedSurvivor()` | charger - Charger索引<br>victim - 受害者索引<br>vecDir[3] - 方向向量<br>&bool:wall - 是否撞到墙<br>&bool:ground - 是否撞到地面 | Action | Charger将幸存者撞到墙上或地面时调用（仅L4D2） |
+| `L4D2_OnSlammedSurvivor_Post()` | charger - Charger索引<br>victim - 受害者索引<br>vecDir[3] - 方向向量<br>bool:wall - 是否撞到墙<br>bool:ground - 是否撞到地面 | 无 | Charger将幸存者撞到墙上或地面后的回调（仅L4D2） |
+| `L4D2_OnSlammedSurvivor_PostHandled()` | charger - Charger索引<br>victim - 受害者索引<br>vecDir[3] - 方向向量<br>&bool:wall - 是否撞到墙<br>&bool:ground - 是否撞到地面 | 无 | Charger将幸存者撞到墙上或地面被阻止时的回调（仅L4D2） |
+| `L4D_OnSpawnSpecial()` | &zombieClass - 特感类型<br>vecPos[3] - 生成位置<br>vecAng[3] - 朝向 | Action | 特感（Bot）生成前调用 |
+| `L4D_OnSpawnSpecial_Post()` | client - 生成的客户端索引<br>zombieClass - 特感<br>vecPos[3] - 生成位置<br>vecAng[3] - 朝向 | 无 | 特感生成后的回调 |
+| `L4D_OnSpawnSpecial_PostHandled()` | client - 生成的客户端索引<br>zombieClass - 特感<br>vecPos[3] - 生成位置<br>vecAng[3] - 朝向 | 无 | 特感生成被阻止时的回调 |
 | `L4D_OnSpawnTank()` | vecPos[3] - 生成位置<br>vecAng[3] - 朝向 | Action | Tank生成前调用 |
 | `L4D_OnSpawnTank_Post()` | client - 生成的客户端索引<br>vecPos[3] - 生成位置<br>vecAng[3] - 朝向 | 无 | Tank生成后的回调 |
 | `L4D_OnSpawnTank_PostHandled()` | client - 生成的客户端索引<br>vecPos[3] - 生成位置<br>vecAng[3] - 朝向 | 无 | Tank生成被阻止时的回调 |
@@ -189,13 +189,13 @@ Left 4 Dead Hooks 是一个用于 Left 4 Dead 和 Left 4 Dead 2 的 SourceMod �
 | `L4D_OnFirstSurvivorLeftSafeArea()` | client - 第一个离开安全区域的幸存者索引 | Action | 第一个幸存者离开安全区域时调用，可阻止回合开始 |
 | `L4D_OnFirstSurvivorLeftSafeArea_Post()` | client - 第一个离开安全区域的幸存者索引 | 无 | 第一个幸存者离开安全区域后的回调 |
 | `L4D_OnIncapacitatedSurvivorKilled()` | victim - 受害者索引<br>attacker - 攻击者索引<br>inflictor - 伤害来源索引 | 无 | 被击倒的幸存者死亡时调用 |
-| `L4D_OnChargerCollide()` | charger - Charger僵尸索引<br>victim - 受害者索引 | Action | Charger碰撞到幸存者时调用 |
-| `L4D_OnChargerGrab()` | charger - Charger僵尸索引<br>victim - 受害者索引 | Action | Charger抓住幸存者时调用 |
-| `L4D_OnChargerReleased()` | charger - Charger僵尸索引<br>victim - 受害者索引 | 无 | Charger释放幸存者时调用 |
-| `L4D_OnChargerPummel()` | charger - Charger僵尸索引<br>victim - 受害者索引 | Action | Charger殴打幸存者时调用 |
-| `L4D_OnJockeyMount()` | jockey - Jockey僵尸索引<br>victim - 受害者索引 | Action | Jockey骑到幸存者身上时调用 |
-| `L4D_OnJockeyDismount()` | jockey - Jockey僵尸索引<br>victim - 受害者索引 | 无 | Jockey从幸存者身上下来时调用 |
-| `L4D_OnSpitterSpit()` | spitter - Spitter僵尸索引 | Action | Spitter吐口水时调用 |
+| `L4D_OnChargerCollide()` | charger - Charger索引<br>victim - 受害者索引 | Action | Charger碰撞到幸存者时调用 |
+| `L4D_OnChargerGrab()` | charger - Charger索引<br>victim - 受害者索引 | Action | Charger抓住幸存者时调用 |
+| `L4D_OnChargerReleased()` | charger - Charger索引<br>victim - 受害者索引 | 无 | Charger释放幸存者时调用 |
+| `L4D_OnChargerPummel()` | charger - Charger索引<br>victim - 受害者索引 | Action | Charger殴打幸存者时调用 |
+| `L4D_OnJockeyMount()` | jockey - Jockey索引<br>victim - 受害者索引 | Action | Jockey骑到幸存者身上时调用 |
+| `L4D_OnJockeyDismount()` | jockey - Jockey索引<br>victim - 受害者索引 | 无 | Jockey从幸存者身上下来时调用 |
+| `L4D_OnSpitterSpit()` | spitter - Spitter索引 | Action | Spitter吐口水时调用 |
 | `L4D2_OnTransitionRestore()` | client - 客户端索引 | Action | 玩家数据恢复前调用（仅L4D2） |
 | `L4D2_OnTransitionRestore_Post()` | client - 客户端索引<br>pkv - keyvalues指针地址 | 无 | 玩家数据恢复后的回调（仅L4D2） |
 | `L4D2_OnTransitionRestore_PostHandled()` | client - 客户端索引<br>pkv - keyvalues指针地址 | 无 | 玩家数据恢复被阻止时的回调（仅L4D2） |
@@ -207,21 +207,21 @@ Left 4 Dead Hooks 是一个用于 Left 4 Dead 和 Left 4 Dead 2 的 SourceMod �
 | `Ammo_t_MarkNativeAsOptional()` | 无 | void | 将Ammo_t相关的原生函数标记为可选 |
 | `AmmoDef_MarkNativeAsOptional()` | 无 | void | 将AmmoDef相关的原生函数标记为可选 |
 | `IsValidSurvivorBot()` | client - 客户端索引 | bool | 检查客户端是否是有效的幸存者机器人 |
-| `IsValidSpecialInfectedBot()` | client - 客户端索引 | bool | 检查客户端是否是有效的特殊僵尸机器人 |
+| `IsValidSpecialInfectedBot()` | client - 客户端索引 | bool | 检查客户端是否是有效的特感机器人 |
 | `IsValidSurvivor()` | client - 客户端索引 | bool | 检查客户端是否是有效的幸存者玩家 |
 | `IsValidInfected()` | client - 客户端索引 | bool | 检查客户端是否是有效的感染者玩家 |
 | `IsPlayerInFirstPerson()` | client - 客户端索引 | bool | 检查玩家是否在第一人称视角 |
 | `GetWeaponTypeFromWeaponIndex()` | weaponIndex - 武器索引 | WeaponType | 根据武器索引获取武器类型 |
 | `GetWeaponTypeFromWeaponName()` | weaponName - 武器名称 | WeaponType | 根据武器名称获取武器类型 |
-| `L4D_GetTankBossZombieCount()` | 无 | int | 获取当前游戏中的Tank和Boss僵尸数量 |
-| `L4D_GetMissionVersusBossLimit()` | mission - 任务索引 | int | 获取特定任务的Boss僵尸限制数量 |
+| `L4D_GetTankBossZombieCount()` | 无 | int | 获取当前游戏中的Tank和Boss数量 |
+| `L4D_GetMissionVersusBossLimit()` | mission - 任务索引 | int | 获取特定任务的Boss限制数量 |
 | `L4D2_GetWeaponClassname()` | type - WeaponType | char[] | 从WeaponType值返回武器类名（仅L4D2） |
 | `IsValidSurvivorBot()` | client - 客户端索引 | bool | 检查客户端是否为有效的幸存者机器人 |
 | `IsValidSurvivor()` | client - 客户端索引 | bool | 检查客户端是否为有效的幸存者（玩家或机器人） |
 | `IsValidInfected()` | client - 客户端索引 | bool | 检查客户端是否为有效的感染者 |
 | `IsValidSpecialInfected()` | client - 客户端索引 | bool | 检查客户端是否为有效的特殊感染者 |
 | `IsValidTank()` | client - 客户端索引 | bool | 检查客户端是否为有效的Tank |
-| `L4D_GetTankBossZombieCount()` | 无 | int | 返回当前Tank僵尸的数量 |
+| `L4D_GetTankBossZombieCount()` | 无 | int | 返回当前Tank的数量 |
 | `L4D_GetSpecialsBossZombieCount()` | 无 | int | 返回当前特殊感染者的数量 |
 | `L4D_GetTotalBossZombieCount()` | 无 | int | 返回总特殊感染者和Tank的数量 |
 | `L4D_GetSurvivorCount()` | 无 | int | 返回存活的幸存者数量 |
@@ -458,7 +458,7 @@ Left 4 Dead Hooks 是一个用于 Left 4 Dead 和 Left 4 Dead 2 的 SourceMod �
 | `L4D2_ChangeFinaleStage()` | finaleType - 结局阶段类型<br>arg - 参数 | void | 更改结局阶段（仅L4D2） |
 | `L4D_ReplaceTank()` | tank - 当前坦克玩家<br>newtank - 新坦克玩家 | void | 替换坦克控制权 |
 | `L4D2_SpawnTank()` | vecPos[3] - 生成位置<br>vecAng[3] - 面向角度 | int | 生成坦克（仅L4D2） |
-| `L4D2_SpawnSpecial()` | zombieClass - 僵尸类型<br>vecPos[3] - 生成位置<br>vecAng[3] - 面向角度 | int | 生成特殊感染者（仅L4D2） |
+| `L4D2_SpawnSpecial()` | zombieClass - 特感类型<br>vecPos[3] - 生成位置<br>vecAng[3] - 面向角度 | int | 生成特殊感染者（仅L4D2） |
 | `L4D2_SpawnWitch()` | vecPos[3] - 生成位置<br>vecAng[3] - 面向角度 | int | 生成女巫（仅L4D2） |
 | `L4D2_SpawnWitchBride()` | vecPos[3] - 生成位置<br>vecAng[3] - 面向角度 | int | 生成女巫新娘（仅L4D2） |
 | `L4D_LobbyUnreserve()` | 无 | void | 移除服务器大厅保留 |
@@ -638,7 +638,7 @@ Left 4 Dead Hooks 是一个用于 Left 4 Dead 和 Left 4 Dead 2 的 SourceMod �
 | `L4D_ReplaceWithBot` | client - 失去控制的玩家的客户端ID | void | 用机器人替换玩家 |
 | `L4D_CullZombie` | client - 要杀死的玩家的客户端ID（非普通感染者） | void | 杀死玩家，将他们的视角传送到随机幸存者 |
 | `L4D_CleanupPlayerState` | client - 受影响的客户端ID | void | 重置玩家状态，相当于死亡时的状态 |
-| `L4D_SetClass` | client - 要更改的玩家的客户端ID（非普通感染者）<br>zombieClass - 要更改为的僵尸类别编号 | void | 设置玩家的僵尸类别，特殊感染者可以在活着时更改！有效值L4D1: 1-3, L4D2: 1-6 |
+| `L4D_SetClass` | client - 要更改的玩家的客户端ID（非普通感染者）<br>zombieClass - 要更改为的特感类别编号 | void | 设置玩家的特感类别，可以在活着时更改特殊感染者！有效值L4D1: 1-3, L4D2: 1-6 |
 | `L4D_MaterializeFromGhost` | client - 要实体化的玩家的客户端ID | int | 从幽灵状态生成特殊感染者，返回客户端的"m_customAbility"武器，或错误时返回-1 |
 | `L4D_BecomeGhost` | client - 受影响的玩家的客户端ID | bool | 将活着的玩家转变为幽灵状态，成功返回true，错误或已处于幽灵状态返回false |
 | `L4D_State_Transition` | client - 受影响的玩家的客户端ID<br>state - 状态值 | void | 进入幽灵/死亡模式，一些状态值可能有不同的结果 |
@@ -966,27 +966,27 @@ Left 4 Dead Hooks 是一个用于 Left 4 Dead 和 Left 4 Dead 2 的 SourceMod �
 | `L4D_GetClientTeam()` | client - 玩家索引 | L4DTeam | 获取玩家的队伍 |
 | `L4D_ChangeClientTeam()` | client - 玩家索引<br>team - 目标队伍 | void | 修改玩家的队伍 |
 
-### 僵尸类管理
+### 特感类管理
 
 | 函数名 | 参数 | 返回值 | 描述 |
 |-------|------|-------|------|
-| `L4D1_GetPlayerZombieClass()` | client - 玩家索引 | L4D1ZombieClassType | 获取L4D1中僵尸玩家的类型（仅限L4D1） |
-| `L4D1_SetPlayerZombieClass()` | client - 玩家索引<br>class - 僵尸类型 | void | 设置L4D1中僵尸玩家的类型（仅限L4D1） |
-| `L4D2_GetPlayerZombieClass()` | client - 玩家索引 | L4D2ZombieClassType | 获取L4D2中僵尸玩家的类型（仅限L4D2） |
-| `L4D2_SetPlayerZombieClass()` | client - 玩家索引<br>class - 僵尸类型 | void | 设置L4D2中僵尸玩家的类型（仅限L4D2） |
-| `L4D1_GetZombieClassname()` | type - 僵尸类型 | char[] | 根据L4D1僵尸类型获取类名（仅限L4D1） |
-| `L4D2_GetZombieClassname()` | type - 僵尸类型 | char[] | 根据L4D2僵尸类型获取类名（仅限L4D2） |
+| `L4D1_GetPlayerZombieClass()` | client - 玩家索引 | L4D1ZombieClassType | 获取L4D1中特感玩家的类型（仅限L4D1） |
+| `L4D1_SetPlayerZombieClass()` | client - 玩家索引<br>class - 特感类型 | void | 设置L4D1中特感玩家的类型（仅限L4D1） |
+| `L4D2_GetPlayerZombieClass()` | client - 玩家索引 | L4D2ZombieClassType | 获取L4D2中特感玩家的类型（仅限L4D2） |
+| `L4D2_SetPlayerZombieClass()` | client - 玩家索引<br>class - 特感类型 | void | 设置L4D2中特感玩家的类型（仅限L4D2） |
+| `L4D1_GetZombieClassname()` | type - 特感类型 | char[] | 根据L4D1特感类型获取类名（仅限L4D1） |
+| `L4D2_GetZombieClassname()` | type - 特感类型 | char[] | 根据L4D2特感类型获取类名（仅限L4D2） |
 
 ### 玩家状态和属性
 
 | 函数名 | 参数 | 返回值 | 描述 |
 |-------|------|-------|------|
-| `L4D_IsPlayerGhost()` | client - 玩家索引 | bool | 检查僵尸玩家是否为幽灵状态 |
-| `L4D_SetPlayerGhostState()` | client - 玩家索引<br>isGhost - 是否为幽灵 | void | 设置僵尸玩家的幽灵状态 |
-| `L4D_GetPlayerGhostSpawnState()` | client - 玩家索引 | int | 获取僵尸玩家的幽灵生成状态位 |
-| `L4D_SetPlayerGhostSpawnState()` | client - 玩家索引<br>bits - 生成状态位 | void | 设置僵尸玩家的幽灵生成状态位 |
-| `L4D_IsPlayerCulling()` | client - 玩家索引 | bool | 检查僵尸玩家是否正在被剔除 |
-| `L4D_SetPlayerCullingState()` | client - 玩家索引<br>isCulling - 是否被剔除 | void | 设置僵尸玩家的剔除状态 |
+| `L4D_IsPlayerGhost()` | client - 玩家索引 | bool | 检查特感玩家是否为幽灵状态 |
+| `L4D_SetPlayerGhostState()` | client - 玩家索引<br>isGhost - 是否为幽灵 | void | 设置特感玩家的幽灵状态 |
+| `L4D_GetPlayerGhostSpawnState()` | client - 玩家索引 | int | 获取特感玩家的幽灵生成状态位 |
+| `L4D_SetPlayerGhostSpawnState()` | client - 玩家索引<br>bits - 生成状态位 | void | 设置特感玩家的幽灵生成状态位 |
+| `L4D_IsPlayerCulling()` | client - 玩家索引 | bool | 检查特感玩家是否正在被剔除 |
+| `L4D_SetPlayerCullingState()` | client - 玩家索引<br>isCulling - 是否被剔除 | void | 设置特感玩家的剔除状态 |
 | `L4D_IsPlayerIncapacitated()` | client - 玩家索引 | bool | 检查玩家是否被击倒（注意：坦克玩家在死亡动画时也会返回true） |
 | `L4D_SetPlayerIncapacitatedState()` | client - 玩家索引<br>isIncapacitated - 是否被击倒 | void | 设置玩家的击倒状态 |
 | `L4D_GetPlayerShovePenalty()` | client - 玩家索引 | int | 获取幸存者玩家的推搡惩罚值 |
