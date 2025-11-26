@@ -436,12 +436,12 @@ Left 4 Dead Hooks 是一个用于 Left 4 Dead 和 Left 4 Dead 2 的 SourceMod �
 | `L4D2_SetSurvivalStartTime()` | time - 时间 | void | 设置生存模式开始前的倒计时时间（仅L4D2） |
 | `L4D_ForceVersusStart()` | 无 | void | 强制游戏以对抗模式开始 |
 | `L4D_ForceSurvivalStart()` | 无 | void | 强制游戏以生存模式开始 |
-| `L4D2_ForceScavengeStart()` | 无 | void | 强制游戏以夺药模式开始（仅L4D2） |
+| `L4D2_ForceScavengeStart()` | 无 | void | 强制游戏以清道夫模式开始（仅L4D2） |
 | `L4D2_IsTankInPlay()` | 无 | bool | 当任何Tank在地图上时返回true（仅L4D2） |
 | `L4D2_DefibByDeadBody()` | client - 要复活的客户端<br>reviver - 执行复活的人<br>nopenalty - 是否将此复活添加到队伍使用的除颤器数量中 | void | 通过除颤器复活死亡玩家，播放起身动画（仅L4D2） |
 | `L4D2_GetDirectorScriptScope()` | level - 作用域级别 | int | 返回导演脚本作用域句柄（仅L4D2） |
-| `L4D_ScavengeBeginRoundSetupTime()` | 无 | int | 重新开始夺药模式的设置计时器（仅L4D2） |
-| `L4D2_SpawnAllScavengeItems()` | 无 | void | 生成地图中所有夺药罐（仅L4D2） |
+| `L4D_ScavengeBeginRoundSetupTime()` | 无 | int | 重新开始清道夫模式的设置计时器（仅L4D2） |
+| `L4D2_SpawnAllScavengeItems()` | 无 | void | 生成地图中所有油桶（仅L4D2） |
 | `L4D_ResetMobTimer()` | 无 | void | 重置自然尸潮计时器（仅L4D2） |
 | `L4D_GetPlayerSpawnTime()` | player - 玩家索引 | float | 获取特殊感染者的剩余生成时间（仅L4D2） |
 | `L4D_SetPlayerSpawnTime()` | player - 玩家索引<br>time - 时间<br>bReportToPlayer - 是否通知玩家 | void | 设置特殊感染者的剩余生成时间（仅L4D2） |
@@ -557,8 +557,8 @@ Left 4 Dead Hooks 是一个用于 Left 4 Dead 和 Left 4 Dead 2 的 SourceMod �
 | `L4D2Direct_GetVSWitchToSpawnThisRound` | roundNumber - 回合编号 | bool | 检查给定回合是否会生成Witch |
 | `L4D2Direct_SetVSWitchToSpawnThisRound` | roundNumber - 回合编号<br>spawn - 是否生成 | void | 告诉导演是否为给定回合生成基于流程距离的Witch |
 | `L4D2Direct_GetVSStartTimer` | 无 | CountdownTimer | 获取对抗模式开始倒计时器的引用 |
-| `L4D2Direct_GetScavengeRoundSetupTimer` | 无 | CountdownTimer | 获取夺药模式回合设置倒计时器的引用 |
-| `L4D2Direct_GetScavengeOvertimeGraceTimer` | 无 | CountdownTimer | 获取夺药模式加时赛宽限倒计时器的引用 |
+| `L4D2Direct_GetScavengeRoundSetupTimer` | 无 | CountdownTimer | 获取清道夫模式回合设置倒计时器的引用 |
+| `L4D2Direct_GetScavengeOvertimeGraceTimer` | 无 | CountdownTimer | 获取清道夫模式加时赛宽限倒计时器的引用 |
 | `L4D2Direct_GetMapMaxFlowDistance` | 无 | float | 获取当前地图的最大流程距离（以流程单位计） |
 | `L4D2Direct_GetSpawnTimer` | client - 客户端索引 | CountdownTimer | 获取跟踪SI玩家下次可以生成时间的CountdownTimer引用 |
 | `L4D2Direct_GetInvulnerabilityTimer` | client - 客户端索引 | CountdownTimer | 获取跟踪幸存者玩家因"无敌帧"而无敌的CountdownTimer引用 |
