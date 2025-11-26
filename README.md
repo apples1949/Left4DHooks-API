@@ -974,8 +974,8 @@ Left 4 Dead Hooks 是一个用于 Left 4 Dead 和 Left 4 Dead 2 的 SourceMod �
 | `L4D1_SetPlayerZombieClass()` | client - 玩家索引<br>class - 特感类型 | void | 设置L4D1中特感玩家的类型（仅限L4D1） |
 | `L4D2_GetPlayerZombieClass()` | client - 玩家索引 | L4D2ZombieClassType | 获取L4D2中特感玩家的类型（仅限L4D2） |
 | `L4D2_SetPlayerZombieClass()` | client - 玩家索引<br>class - 特感类型 | void | 设置L4D2中特感玩家的类型（仅限L4D2） |
-| `L4D1_GetZombieClassname()` | type - 特感类型 | char[] | 根据L4D1特感类型获取类名（仅限L4D1） |
-| `L4D2_GetZombieClassname()` | type - 特感类型 | char[] | 根据L4D2特感类型获取类名（仅限L4D2） |
+| `L4D1_GetZombieClassname()` | type - 僵尸类型 | char[] | 根据L4D1僵尸类型获取类名（仅限L4D1） |
+| `L4D2_GetZombieClassname()` | type - 僵尸类型 | char[] | 根据L4D2僵尸类型获取类名（仅限L4D2） |
 
 ### 玩家状态和属性
 
